@@ -1,0 +1,30 @@
+<h1>Register</h1>
+<input type="text" placeholder="name" [(ngModel)]="id"><br>
+<div *ngIf="id.length > 7;then idTrueBlock;else idFalseBlock" style="background-color: red;">
+</div>
+<input type="text" placeholder="age" [(ngModel)]="password"><br>
+<div *ngIf="password > 20 && password < 40;then passwordTrueBlock;else passwordFalseBlock" style="background-color: red;">
+</div>
+
+<ng-template #idTrueBlock>
+  <div *ngIf="id.length > 3" style="background-color: azure;">
+    Valid
+  </div>
+</ng-template>
+
+<ng-template #idFalseBlock>
+  <div *ngIf="id.length < 3" style="color: red;">
+    Id needs to be 7 or more charachers
+  </div>
+</ng-template>
+<ng-template #passwordTrueBlock>
+  <div *ngIf="password >= 20 && password < 40" style="background-color: azure;">
+  </div>
+</ng-template>
+
+<ng-template #passwordFalseBlock>
+  <div *ngIf="password < 20 || password > 40" style="color: red;">
+    Age needs to be between 20&40
+  </div>
+</ng-template>
+<button (click)="store()">Register</button>

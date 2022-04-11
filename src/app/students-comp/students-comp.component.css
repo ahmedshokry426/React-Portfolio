@@ -1,0 +1,11 @@
+/* this does not matter */
+table,
+th,
+td {
+ border: 1px solid;
+}
+
+th,
+td {
+ padding: 1em;
+}

@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <!-- output -->
+    <app-register-comp (myEvent) = "GetData($event)"></app-register-comp>
+  </div>
+  <div>
+    <!-- input -->
+    <app-students-comp [DataFromParent]="DataFromLogin"></app-students-comp>
+  </div>
+</div>
