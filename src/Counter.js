@@ -1,22 +1,23 @@
-import { useState } from 'react'
-
-function Count(props) {
-   let [counter,setCounter]=useState(props.value)
-    const inc = () =>{
-        setCounter(++counter); 
-    }
-    const dec = () =>{
-        if(counter>=1){
-            setCounter(--counter); 
-        }
-    }
+import React, { useState } from 'react'
+import { AiFillPlusCircle,AiFillMinusCircle } from "react-icons/ai";
+function Counter({value}) {
+   let [counter,setCounter]=useState(value)
+   const increase =  ( ) => {
+       setCounter(++counter); 
+   }
+   const decrease =  ( ) => {
+    setCounter(--counter); 
+}
     return (
         <div>
-            <h1>{counter}</h1>
-            <button className='btn btn-primary mx-4' onClick={inc}>Increment</button>
-            <button className='btn btn-warning' onClick={dec}>Decrement</button>
-        </div>
+          <h1>
+              {counter}
+          </h1>
+       <button className='btn btn-success mx-2' onClick={increase}><AiFillPlusCircle /></button>
+       <button className='btn btn-danger mx-2' onClick={decrease}><AiFillMinusCircle /></button>
+       
+      </div>
     )
 }
 
-export default Count
+export default Counter

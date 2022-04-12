@@ -1,12 +1,21 @@
-import Count from './Counter.js'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home.js'
+import Error from './Error.js'
+import Navbar from './Navbar.js'
+import Product from './Product.js'
+
 function App() {
-  const value = 0 ; 
   return (
     <div className='container text-center' >
-    <h1>Counter</h1>
-    <Count value={value}/>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Products/:id' element={<Product />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;
