@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiFillPlusCircle,AiFillMinusCircle } from "react-icons/ai";
-function Counter({value}) {
-   let [counter,setCounter]=useState(value)
+function Counter() {
+   let [counter,setCounter]=useState(0)
    const increase =  ( ) => {
        setCounter(++counter); 
    }
