@@ -4,6 +4,7 @@ import Error from './Error.js'
 import Navbar from './Navbar.js'
 import Product from './components/Product.js'
 import Todo from './Todo/Todo'
+import Form from './views/form/Form.js'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/Products/:id' element={<Product />} />
       <Route path='/todo'  element={ <Todo /> }  />
       <Route path='*'  element={ <Error  /> }  />
+      <Route path='/form'  element={ <Form /> }  />
     </Routes>
     </BrowserRouter>
     
